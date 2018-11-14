@@ -10,7 +10,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
+   html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -98,19 +98,13 @@ textarea {
    ========================================================================== */
 
 
+main {
+    margin-top: 70px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.loan-control .input-group {
+    margin-bottom: 15px;
+}
 
 
 /* ==========================================================================
@@ -284,4 +278,9 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
+}
+.factory-type{
+    /* margin-bottom: 2rem; */
+    display: inline-block;
+    width: inherit;
 }

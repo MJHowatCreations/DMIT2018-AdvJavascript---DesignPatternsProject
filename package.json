@@ -1,0 +1,35 @@
+{
+  "name": "DMIT2018-AdvJavascript---DesignPatternsProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "compile": "npx babel js/src --out-dir js/dist",
+    "watch": "npx babel js/src --watch --out-dir js/dist",
+    "handlebars": "npx handlebars js/src/templates/loans.handlebars -f js/dist/loans.template.js",
+    "build": "npm run-script compile && npm run-script handlebars",
+    "test": "npm run-script compile && npx mocha -r esm test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MJHowatCreations/DMIT2018-AdvJavascript---DesignPatternsProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MJHowatCreations/DMIT2018-AdvJavascript---DesignPatternsProject/issues"
+  },
+  "homepage": "https://github.com/MJHowatCreations/DMIT2018-AdvJavascript---DesignPatternsProject#readme"
+}

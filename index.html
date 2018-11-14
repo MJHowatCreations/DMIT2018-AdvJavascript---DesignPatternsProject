@@ -13,6 +13,7 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -24,13 +25,90 @@
   <!-- Add your site or application content here -->
   <p>Hello world! This is HTML5 Boilerplate.</p>
   <!-- Give each factory a color-bg -->
- <!-- Factory -->
- <!-- Factory.Child1 (display:block;) --> <!-- Factory.Child2 (display:inline-block;)  -->
- <!-- Factory...... -->
- <!-- Factory(white).Child1(red).Child2(yellow).Child1(green) -->
- <!-- Factory.Child1.Child1.Child1.Child1.name -->
+  <!-- Factory -->
+  <!-- Factory.Child1 (display:block;) -->
+  <!-- Factory.Child2 (display:inline-block;)  -->
+  <!-- Factory...... -->
+  <!-- Factory(white).Child1(red).Child2(yellow).Child1(green) -->
+  <!-- Factory.Child1.Child1.Child1.Child1.name -->
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Factory of Factories</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Something?</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12 factory-display">
+          <h3>Factory Display</h3>
+          <!-- <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="loan-title" placeholder="title">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" class="form-control" id="loan-principal" placeholder="principal" aria-label="Amount (to the nearest dollar)"
+                step="1">
+              <span class="input-group-addon">.00</span>
+            </div>
+            <div class="input-group">
+              <input type="number" step=".01" class="form-control" id="loan-rate" placeholder="rate" aria-label="Rate (as a percent)">
+              <span class="input-group-addon">%</span>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" id="loan-term" placeholder="term">
+            </div>
+            <div class="form-group">
+              <label for="loan-payment">Payment</label>
+              <span class="loan-payment" id="loan-payment">$0.00</span>
+              <label for="loan-cost">Cost</label>
+              <span class="loan-cost  " id="loan-cost">$0.00</span>
+            </div>
+            <button type="submit" class="btn btn-default">Add</button>
+            <button type="reset" class="btn btn-info">Clear</button>
+          </form> -->
+        </div>
+        <div class="col-sm-6 col-xs-12 factory-control">
+          <h3>Factory Creation</h3>
+          <form class="form-group factory-create">
+            <button type="button" class="createbtn btn btn-default">Create Factory</button>
+            <select name="factory-type" id="factory-type" class="form-control factory-type">
+              <option value="" selected disabled hidden>Select a Factory Type</option>
+              <option value="float">Float</option>
+              <option value="block">Block</option>
+              <option value="inline">Inline</option>
+              <option value="flex">Flex</option>
+              <option value="grid">Grid</option>
+              <option value="absolute">Absolute</option>
+            </select>
+          </form>
+          <div class="list-group">
+            <button type="button" class="list-group-item">No Factories</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+  </footer>
 
-  
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/src/main.js"></script>
