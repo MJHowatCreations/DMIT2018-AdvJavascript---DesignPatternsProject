@@ -10,7 +10,22 @@ function Inline ( arg ) {
     this.color = arg.color || 'yellow';
     this.factorySize = arg.factorySize || 8
 }
-
+function Float ( arg ) {
+  this.color = arg.color || 'yellow';
+  this.factorySize = arg.factorySize || 8
+}
+function Flex ( arg ) {
+  this.color = arg.color || 'yellow';
+  this.factorySize = arg.factorySize || 8
+}
+function Grid ( arg ) {
+  this.color = arg.color || 'yellow';
+  this.factorySize = arg.factorySize || 8
+}
+function Absolute ( arg ) {
+  this.color = arg.color || 'yellow';
+  this.factorySize = arg.factorySize || 8
+}
 
 function Factory () {};
 Factory.prototype.factoryType = Block;
@@ -37,6 +52,8 @@ Factory.prototype.createFactory = function(fac){
     }
     return this.factoryType;
 };
+
+
 
 
 /* 
