@@ -55,28 +55,75 @@
   </header>
   <main>
     <div class="container">
+      <div class="row">
         <h1>Notes - Factory Method</h1>
         <h4>Also known as: Virtual Constructor</h4>
         <a href="https://refactoring.guru/design-patterns/factory-method">Source</a>
-        <h3>Intent</h3>
-        <p>Factory Method provides an interface for creating objects in the parent class, but allows subclasses to alter the type of the objects that will be created.</p>
-        <h3>Problem</h3>
-        <p>You are creating a logistics management app. First version of your app will handle only a single object, but in the future we will want to expand the functionality and alterations. </p>
-        <p>After a while your code will be coupled with the original object and making changes will be hard.</p>
-        <h3>Solution</h3>
-        <p>Factory Method replaces direct object creation with a special <i>"factory"</i> method. The constructor should be moved inside that method. Objects returned by the factory method are often called <i>"products"</i>.</p>
-        <p>May seem pointless at first, but now we can override the factory method in a subclass and change the class of the object that will be created.</p>
-        <p>There is slight limitations: all products must have a common interface. Factory method is a base class that should be returning this common interface.</p>
-        <p>E.g. It is like having a module object parent class and then making slight alterations in the children that inherit from this parent class.</p>
-        <h3>Application</h3>
-        <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript">References</a>
-        <p>This allows user to extend existing code as oppose to modifying. This also condenses code to produce components to a single creational method. We can save system resources and reuse existing objects, instead of rebuilding new ones.</p>
-        
-        <h3>Pros & Cons</h3>
-        <p></p>
-        <h3>Relations with Other Patterns</h3>
-        <p></p>
+      </div>
+      <div class="col-md-6">
+      <h3>Intent</h3>
+      <p>Factory Method provides an interface for creating objects in the parent class, but allows subclasses to alter
+        the type of the objects that will be created.</p>
+      <h3>Problem</h3>
+      <p>You are creating a logistics management app. First version of your app will handle only a single object, but
+        in the future we will want to expand the functionality and alterations. </p>
+      <p>After a while your code will be coupled with the original object and making changes will be hard.</p>
+      <h3>Solution</h3>
+      <p>Factory Method replaces direct object creation with a special <i>"factory"</i> method. The constructor should
+        be moved inside that method. Objects returned by the factory method are often called <i>"products"</i>.</p>
+      <p>May seem pointless at first, but now we can override the factory method in a subclass and change the class of
+        the object that will be created.</p>
+      <p>There is slight limitations: all products must have a common interface. Factory method is a base class that
+        should be returning this common interface.</p>
+      <p>E.g. It is like having a module object parent class and then making slight alterations in the children that
+        inherit from this parent class.</p>
+      <h3>Application</h3>
+      <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript">References</a>
+      <p>This allows user to extend existing code as oppose to modifying. This also condenses code to produce
+        components to a single creational method. We can save system resources and reuse existing objects, instead of
+        rebuilding new ones.</p>
+      </div>
+      <div class="col-md-6">
+      <h3>Pros & Cons</h3>
+      <p></p>
+      <table class="table procon">
+        <!-- Table Headers -->
+        <thead>
+          <tr>
+            <td>Pros</td>
+            <td>Cons</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr scope="row">
+            <td>Follows the Open/Closed Principle</td>
+            <td>Requires extra subclasses.</td>
+          </tr>
+          
+          <tr scope="row">
+              <td>Avoids tight coupling between concrete products and code that uses them.</td>
+              <td></td>
+            </tr>
+            
+          <tr scope="row">
+              <td>Simplifies code due to moving all creational code to one place.</td>
+              <td></td>
+            </tr>
+            
+          <tr scope="row">
+              <td>Simplifies adding new products to the program.</td>
+              <td></td>
+            </tr>
+        </tbody>
 
+      </table>
+      <h3>Relations with Other Patterns</h3>
+      <p>Most designs will start with Factory Method, but slowly evolve towards Abstract Factory, Prototype, or Builder as designers need more flexibility.</p>
+      <p>Abstract Factory classes are often implemented with Factory Methods, but also used in Prototype.</p>
+      <p>Factory Method can be used along with Iterator pattern to return proper iterators based on subclass.</p>
+      <p>Prototype requires initialize, but not subclassing and Factory Method is the opposite</p>
+      <p>Factory Method focuses on Template Method and is often served as a step in a large Template Method.</p>
+    </div>
 
 
     </div>

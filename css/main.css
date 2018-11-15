@@ -284,3 +284,6 @@ main {
     display: inline-block;
     width: inherit;
 }
+.procon td{
+    width: 10rem;
+}
