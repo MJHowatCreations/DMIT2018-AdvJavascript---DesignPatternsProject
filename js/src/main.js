@@ -29,7 +29,7 @@ function Absolute ( arg ) {
 
 function Factory () {};
 Factory.prototype.factoryType = Block;
-Factory.prototype.createFactory = function(fac){
+Factory.prototype.createFactory = function (fac) {
     switch(fac.factoryType){
         case "block":
         this.factoryType = Block;
@@ -50,9 +50,24 @@ Factory.prototype.createFactory = function(fac){
         this.factoryType = Absolute;
         break;
     }
-    return this.factoryType;
+    return new this.factoryType(fac);
 };
 
+document.querySelector('.createbtn').addEventListener('click', function() {
+  var factory = new Factory();
+  factory.factoryType = (document.querySelector('#factory-type').value);
+  factory.createFactory({
+    color: 'red',
+    factorySize: '6'
+  });
+  console.log(factory);
+  factoryDisplay = document.querySelector('#factory-display')
+  factoryDisplay.style.color = factory.color;
+  factoryDisplay.style.height = `${factory.factorySize}rem`;
+  factoryDisplay.style.width = `${factory.factorySize}rem`;
+  factoryDisplay.style.display = factory.factoryType;
+
+});
 
 
 
