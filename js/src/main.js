@@ -63,7 +63,6 @@ document.querySelector('.createbtn').addEventListener('click', function() {
   let newFac = factory.createFactory({
     factoryType: newFacType
   });
-<<<<<<< HEAD
   // console.log(factory);
   // console.log(newFac);
 
@@ -74,14 +73,6 @@ document.querySelector('.createbtn').addEventListener('click', function() {
   newFactory.style.width = `${newFac.factorySize}rem`;
   newFactory.style.display = newFac.factoryType;
   factoryDisplay.appendChild(newFactory);
-=======
-  console.log(factory.color);
-  factoryDisplay = document.querySelector('#factory-display')
-  factoryDisplay.style.color = factory.color;
-  factoryDisplay.style.height = `${factory.factorySize}rem`;
-  factoryDisplay.style.width = `${factory.factorySize}rem`;
-  factoryDisplay.style.display = factory.factoryType;
->>>>>>> 05f765567780b304df0434fd320c834f93dc1567
 
 });
 
