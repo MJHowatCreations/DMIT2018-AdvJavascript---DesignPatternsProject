@@ -6,9 +6,9 @@ function Block ( arg ) {
     this.color = arg.color || 'blue';
     this.factorySize = arg.factorySize || 15
 }
-function Inline ( arg ) {
-    this.color = arg.color || 'yellow';
-    this.factorySize = arg.factorySize || 8
+function Inline (arg) {
+    this.color = arg || 'yellow';
+    this.factorySize = arg || 8
 }
 function Float ( arg ) {
   this.color = arg.color || 'yellow';
@@ -58,7 +58,7 @@ document.querySelector('.createbtn').addEventListener('click', function() {
   factory.factoryType = (document.querySelector('#factory-type').value);
   factory.createFactory({
   });
-  console.log(factory);
+  console.log(factory.color);
   factoryDisplay = document.querySelector('#factory-display')
   factoryDisplay.style.color = factory.color;
   factoryDisplay.style.height = `${factory.factorySize}rem`;
