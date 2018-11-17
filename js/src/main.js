@@ -11,7 +11,7 @@ function Block ( arg ) {
 function Inline ( arg ) {
     this.color = arg.color || 'yellow';
     this.factorySize = arg.factorySize || 8
-    this.factoryType = 'inlineblock';
+    this.factoryType = 'inline-block';
 }
 function Flex ( arg ) {
   this.color = arg.color || 'red';
@@ -24,7 +24,7 @@ function Grid ( arg ) {
   this.factoryType = 'grid';
 }
 function Absolute ( arg ) {
-  this.color = arg.color || 'yellow';
+  this.color = arg.color || 'gray';
   this.factorySize = arg.factorySize || 8
   this.factoryType = 'absolute';
 }
