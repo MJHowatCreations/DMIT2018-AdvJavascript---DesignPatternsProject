@@ -1,41 +1,45 @@
 function Float ( arg ) {
     this.color = arg.color || 'white';
     this.factorySize = arg.factorySize || 10; // Regular size
+    this.factoryType = 'float';
 };
 function Block ( arg ) {
     this.color = arg.color || 'blue';
     this.factorySize = arg.factorySize || 15
+    this.factoryType = 'block';
 }
 function Inline ( arg ) {
     this.color = arg.color || 'yellow';
     this.factorySize = arg.factorySize || 8
-}
-function Float ( arg ) {
-  this.color = arg.color || 'yellow';
-  this.factorySize = arg.factorySize || 8
+    this.factoryType = 'inline';
 }
 function Flex ( arg ) {
   this.color = arg.color || 'yellow';
   this.factorySize = arg.factorySize || 8
+  this.factoryType = 'flex';
 }
 function Grid ( arg ) {
   this.color = arg.color || 'yellow';
   this.factorySize = arg.factorySize || 8
+  this.factoryType = 'grid';
 }
 function Absolute ( arg ) {
   this.color = arg.color || 'yellow';
   this.factorySize = arg.factorySize || 8
+  this.factoryType = 'absolute';
 }
 
 function Factory () {};
 Factory.prototype.factoryType = Block;
+Factory.prototype.color = 'purple';
+Factory.prototype.factorySize = 8;
 Factory.prototype.createFactory = function (fac) {
-    switch(this.factoryType){
+    switch(fac.factoryType){
         case "block":
         this.factoryType = Block;
         break;
         case "inline":
-        this.factoryType = Inline(this);
+        this.factoryType = Inline;
         break;
         case "float":
         this.factoryType = Float;
@@ -50,20 +54,25 @@ Factory.prototype.createFactory = function (fac) {
         this.factoryType = Absolute;
         break;
     }
-    return this.factoryType;
+    return new this.factoryType(fac);
 };
 
 document.querySelector('.createbtn').addEventListener('click', function() {
-  var factory = new Factory();
-  factory.factoryType = (document.querySelector('#factory-type').value);
-  factory.createFactory({
+  let factory = new Factory(),
+  newFacType = (document.querySelector('#factory-type').value);
+  let newFac = factory.createFactory({
+    factoryType: newFacType
   });
-  console.log(factory);
-  factoryDisplay = document.querySelector('#factory-display')
-  factoryDisplay.style.color = factory.color;
-  factoryDisplay.style.height = `${factory.factorySize}rem`;
-  factoryDisplay.style.width = `${factory.factorySize}rem`;
-  factoryDisplay.style.display = factory.factoryType;
+  // console.log(factory);
+  // console.log(newFac);
+
+  factoryDisplay = document.querySelector('#factory-display');
+  let newFactory = document.createElement('div');
+  newFactory.style.backgroundColor = newFac.color;
+  newFactory.style.height = `${newFac.factorySize}rem`;
+  newFactory.style.width = `${newFac.factorySize}rem`;
+  newFactory.style.display = newFac.factoryType;
+  factoryDisplay.appendChild(newFactory);
 
 });
 
@@ -115,7 +124,7 @@ VehicleFactory.prototype.createVehicle = function ( options ) {
   }
  
   return new this.vehicleClass( options );
- 
+  return new Car(options);
 };
  
 // Create an instance of our factory that makes cars
