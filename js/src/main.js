@@ -1,5 +1,5 @@
 function Float ( arg ) {
-    this.color = arg.color || 'white';
+    this.color = arg.color || 'purple';
     this.factorySize = arg.factorySize || 10; // Regular size
     this.factoryType = 'float';
 };
@@ -11,16 +11,16 @@ function Block ( arg ) {
 function Inline ( arg ) {
     this.color = arg.color || 'yellow';
     this.factorySize = arg.factorySize || 8
-    this.factoryType = 'inline';
+    this.factoryType = 'inlineblock';
 }
 function Flex ( arg ) {
-  this.color = arg.color || 'yellow';
-  this.factorySize = arg.factorySize || 8
+  this.color = arg.color || 'red';
+  this.factorySize = arg.factorySize || 12
   this.factoryType = 'flex';
 }
 function Grid ( arg ) {
-  this.color = arg.color || 'yellow';
-  this.factorySize = arg.factorySize || 8
+  this.color = arg.color || 'black';
+  this.factorySize = arg.factorySize || 18
   this.factoryType = 'grid';
 }
 function Absolute ( arg ) {
@@ -54,7 +54,7 @@ Factory.prototype.createFactory = function (fac) {
         this.factoryType = Absolute;
         break;
     }
-    return new this.factoryType(fac);
+    return new this.factoryType(fac); 
 };
 
 document.querySelector('.createbtn').addEventListener('click', function() {
@@ -67,11 +67,24 @@ document.querySelector('.createbtn').addEventListener('click', function() {
   // console.log(newFac);
 
   factoryDisplay = document.querySelector('#factory-display');
-  let newFactory = document.createElement('div');
+  let newFactory = document.createElement('div'); 
   newFactory.style.backgroundColor = newFac.color;
   newFactory.style.height = `${newFac.factorySize}rem`;
   newFactory.style.width = `${newFac.factorySize}rem`;
-  newFactory.style.display = newFac.factoryType;
+  
+ 
+  newFactory.style.marginBottom = '2rem';
+  switch(newFac.factoryType){
+    case 'float':
+    newFactory.style.float = 'left';
+    break;
+    case 'absolute':
+    newFactory.style.position = 'absolute';
+    break;
+    default:
+    newFactory.style.display = newFac.factoryType;
+    break;
+  }
   factoryDisplay.appendChild(newFactory);
 
 });
