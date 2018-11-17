@@ -8,20 +8,10 @@ function Block ( arg ) {
     this.factorySize = arg.factorySize || 15
     this.factoryType = 'block';
 }
-<<<<<<< HEAD
 function Inline ( arg ) {
     this.color = arg.color || 'yellow';
     this.factorySize = arg.factorySize || 8
     this.factoryType = 'inline';
-=======
-function Inline (arg) {
-    this.color = arg || 'yellow';
-    this.factorySize = arg || 8
-}
-function Float ( arg ) {
-  this.color = arg.color || 'yellow';
-  this.factorySize = arg.factorySize || 8
->>>>>>> 05f765567780b304df0434fd320c834f93dc1567
 }
 function Flex ( arg ) {
   this.color = arg.color || 'yellow';
